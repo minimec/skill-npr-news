@@ -35,6 +35,7 @@ from mycroft.util.parse import fuzzy_match
 from mycroft.util.time import now_local
 
 from .stations.abc import abc
+from .stations.srgssr import srf, rts, rsi
 
 
 def image_path(filename):
@@ -129,6 +130,9 @@ FEEDS = {
     "OE3": ("Ö3 Nachrichten",
             "https://oe3meta.orf.at/oe3mdata/StaticAudio/Nachrichten.mp3",
             None),
+    "SRF": ("SRF News", srf, None),
+    "RTS": ("RTS News", rts, None),
+    "RSI": ("RSI News", rsi, None),    
 }
 
 
