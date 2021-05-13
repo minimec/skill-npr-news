@@ -283,8 +283,20 @@ class NewsSkill(CommonPlaySkill):
 
     def get_default_station(self):
         country_code = self.location['city']['state']['country']['code']
+        switzerland = ['CH']
         if self.default_feed.get(country_code) is not None:
             feed_code = self.default_feed[country_code]
+        elif country_code in switzerland :
+            """Custom region/state check to choose language for Swiss news stations"""
+            state_code = self.location['city']['state']['code']
+            romandie = [ 'CH.GE' , 'CH.FR' , 'CH.JU' , 'CH.NE' , 'CH.VD' , 'CH.VS' ]
+            ticino = [ 'CH.TI' ]        
+            if state_code in romandie :
+                feed_code = "RTS"
+            elif state_code in ticino :
+                feed_code = "RSI"
+            else :
+                feed_code = "SRF"             
         else:
             feed_code = "NPR"
         return feed_code
