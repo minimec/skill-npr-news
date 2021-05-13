@@ -130,9 +130,9 @@ FEEDS = {
     "OE3": ("Ö3 Nachrichten",
             "https://oe3meta.orf.at/oe3mdata/StaticAudio/Nachrichten.mp3",
             None),
-    "SRF": ("SRF News", srf, None),
-    "RTS": ("RTS News", rts, None),
-    "RSI": ("RSI News", rsi, None),    
+    "SRF": ("SRF News", srf, image_path('SRF.png')),
+    "RTS": ("RTS News", rts, image_path('RTS.png')),
+    "RSI": ("RSI News", rsi, image_path('RSI.png')),    
 }
 
 
